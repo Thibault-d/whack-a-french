@@ -1,7 +1,7 @@
 # Whack-a-French
 
 In this game you will have to put yourself in the shoes of a French person: me!
-You'll have to identify quickly what you should SMASH and what you should let live, according to your knowledge of what's good or bad in France.
+You'll have to identify quickly what you should SMASH and what you shouldn't.
 
 User will user his mouse to point at objects and decide to SMASH or not by clicking on them.
 
@@ -55,16 +55,36 @@ How to lose: If your score hits - 1.000, or if time's up and you don't have 10.0
 ## Data structure
 __main.js__
 ````
+Class Main with following methods:
+- Score
+- Timer
+- Status
+- Update
+- Level
 
-````
-__Game.js__
-````
+- Start
+- Pause
+- Reset
+
+- Smash object
+- Show objects randomly
 
 ````
 __Objects.js__
 ````
+Class Objects with following methods:
+- Appear
+- Disappear
+
+Each object must have the following properties:
+- Score value (positive or negative)
+- Image
+
 
 ````
 ## Links
+Git Repo: https://github.com/Thibault-d/whack-a-french
+Trello : https://trello.com/b/pCGkviAX/whack-a-french
+Slides: https://docs.google.com/presentation/d/1irzjurzm-yNg6PpMWxrfCURNSr0QPlEt5rMlhRZXt7c/edit#slide=id.p
 
 
