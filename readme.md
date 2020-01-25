@@ -1,12 +1,17 @@
 # Whack-a-French
 
 In this game you will have to put yourself in the shoes of a French person: me!
-You'll have to identify quickly what you should SMASH and what you shouldn't.
+Some MOBS will appear on the screen, you have to quickly guess if you should SMASH IT or not.
 
-User will user his mouse to point at objects and decide to SMASH or not by clicking on them.
+If you SMASHED something French people don't like: you gain points! 
+If you SMASH something we like in France, you lose points!
 
 How to win: Reach 10.000 points before the end of the Chrono
 How to lose: If your score hits - 1.000, or if time's up and you don't have 10.000 points
+
+User will user his mouse to point at objects and decide to SMASH or not by clicking on them.
+
+
 
 
 * * *
@@ -33,8 +38,8 @@ How to lose: If your score hits - 1.000, or if time's up and you don't have 10.0
 * Create game grid
 * Create Hammer
 * Create Chrono
-* Create random objects appearing
-* When Object is Smashed: gain or lose points
+* Create random MOBS appearing
+* When MOB is Smashed: gain or lose points
 
 * * *
 
@@ -66,17 +71,17 @@ Class Main with following methods:
 - Pause
 - Reset
 
-- Smash object
-- Show objects randomly
+- Smash MOB
+- Show MOBS randomly on the grid
 
 ````
 __Objects.js__
 ````
-Class Objects with following methods:
+Class MOB  with following methods:
 - Appear
 - Disappear
 
-Each object must have the following properties:
+Each MOB must have the following properties:
 - Score value (positive or negative)
 - Image
 
