@@ -1,24 +1,65 @@
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  grid-gap: 50px;
-	width: 300px;
-	height: 300px;
-  position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-  }
+* {
+  font-size: 100%;
+  font-family: 'Segoe UI';
+ }
 
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-    text-align: center;
-    
-  }
+.game-container {
+  display: flex;
+  flex-direction: line;
+  height: 700px;
+  background-color: #F7F7F7;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 70%;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #E5B9B6;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  background-color: #EED5D1;
+  margin-right: 50px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+
+}
+
+.grid-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-right: 400px;
+  background: #AAD0D9;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-item {
+  display: flex;
+  background-color: white;
+  width: 31%;
+  height: 31%;
+  margin: 5px;
+}
+
+.menu-container {
+  height: 300px;
+}
