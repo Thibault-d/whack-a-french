@@ -1,6 +1,7 @@
 * {
   font-size: 100%;
-  font-family: 'Segoe UI';
+  font-family: '8BITWONDERNominal';
+  cursor: url("/img/baguette.png"), auto;	
  }
 
 .game-container {
@@ -10,6 +11,7 @@
   background-color: #F7F7F7;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
 .score-grid-container {
@@ -23,7 +25,9 @@
 .score-board {
   display: flex;
   justify-content: space-evenly;
-  background-color: #E5B9B6;
+  background-color:black;
+  color:white;
+
 }
 
 .menu-container {
@@ -31,7 +35,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  background-color: #EED5D1;
   margin-right: 50px;
 }
 
@@ -46,7 +49,8 @@ button {
   width: 100%;
   height: 100%;
   margin-right: 400px;
-  background: #AAD0D9;
+  background-image: url("/img/background.PNG");
+  background-size: cover;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

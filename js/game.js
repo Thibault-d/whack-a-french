@@ -2,7 +2,7 @@ class Game {
     constructor() {
         this.timeLeft = 10;
         this.randomDivs = 9;
-        this.mobs = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+        this.mob =  ;
     }
 
     start() {
@@ -23,14 +23,14 @@ class Game {
                 document.getElementById('timer').textContent = "TIME OUT";
             }
         }.bind(this), 1000);
-        
+
     }
 
     createDiv() {
-        this.mobs.forEach(element => {
-           let newDiv = document.createElement('div');
+        this.mob.forEach(element => {
+            let newDiv = document.createElement('div');
             newDiv.className = 'grid-item';
-            newDiv.textContent = this.mobs[0];
+            newDiv.textContent = element;
             document.getElementsByClassName('grid-container')[0].append(newDiv);
             console.log(newDiv);
         });
