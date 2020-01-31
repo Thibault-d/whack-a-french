@@ -58,7 +58,6 @@ button {
 
 .grid-item {
   display: flex;
-  background-color: white;
   width: 31%;
   height: 31%;
   margin: 5px;

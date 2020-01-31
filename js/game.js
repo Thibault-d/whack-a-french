@@ -1,24 +1,17 @@
 class Game {
-    constructor(level) {
+    constructor(level, speed) {
         this.timeLeft = 10;
         this.randomDivs = 9;
         this.gridSize = level;
+        this.speed = speed;
     }
 
     start() {
         startButton.onclick = function () {
             console.log('started');
             this.startTimer();
-            this.createDiv();
-            this.randomIntegerDiv();
-            console.log(document.getElementById(mygame.randomIntegerDiv().toString()));
-            console.log(mymobs.newMob());
-
-            //document.getElementById(mygame.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image;
-            document.getElementById(mygame.randomIntegerDiv().toString()).setAttribute() = mymobs.newMob();
-
-
-
+            this.createGrid();
+            this.mobGenerator()
         }.bind(this)
     }
 
@@ -33,7 +26,7 @@ class Game {
         }.bind(this), 1000);
     }
 
-    createDiv() {
+    createGrid() {
         for (let i = 0; i < this.gridSize; i++) {
             let newDiv = document.createElement('div');
             newDiv.className = 'grid-item';
@@ -49,4 +42,11 @@ class Game {
             Math.floor(Math.random() * (+max - +min)) + +min;
         return random;
     }
-}
+
+    mobGenerator() {
+        let frequency = setInterval(function () {
+                document.getElementById(mygame.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image;
+
+            },1000);
+        }
+    }

@@ -27,12 +27,12 @@ let mobArray = [{
     },
     {
         scoreValue: 999,
-        image: '<img width="100" height="100" src="/img/baguette.png">',
+        image: '<img width="100" height="100" src="/img/fromage.png">',
         frequency: 1,
     },
     {
         scoreValue: 1,
-        image: '<img width="100" height="100" src="/img/baguette.png">',
+        image: '<img width="100" height="100" src="/img/lepen.jpg">',
         frequency: 1,
     },
     {
