@@ -1,6 +1,7 @@
 console.log('main.js is connected');
 var startButton = document.getElementById('start');
-let mygame = new Game(9,700,10);
 let mymobs = new Mob;
-mygame.start();
+let mygame = new Game(9,500,10);
 mymobs.newMob();
+mygame.start();
+

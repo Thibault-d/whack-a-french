@@ -1,13 +1,13 @@
 class Game {
     constructor(level, speed, gameTime) {
         this.timeLeft = gameTime;
-        this.randomDivs = 9;
         this.gridSize = level;
         this.speed = speed;
         this.countdown;
         this.remaining = gameTime;
-        this.score;
+        this.score = 0;
         this.mobTimer;
+        this.mobDisappearTimer;
     }
 
     start() {
@@ -27,11 +27,10 @@ class Game {
                 document.getElementById('timer').textContent = "TIME OUT";
                 clearInterval(this.mobTimer);
                 clearInterval(this.countdown);
+                clearInterval(this.mobDisappearTimer);
                 this.resetGrid();
             }
-
         }.bind(this), 1000);
-
     }
 
     createGrid() {
@@ -39,9 +38,6 @@ class Game {
             let newDiv = document.createElement('div');
             newDiv.className = 'grid-item';
             newDiv.id = i;
-            newDiv.onclick = function () {
-                newDiv.innerHTML = '';
-            }
             document.getElementsByClassName('grid-container')[0].append(newDiv);
         };
     }
@@ -56,13 +52,24 @@ class Game {
 
     mobGenerator() {
         this.mobTimer = setInterval(function () {
-            document.getElementById(this.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image; // take random mob
+            let currentMob = mymobs.newMob(); // create a new mob randomly
+            let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number
+            let currentDiv = document.getElementById(selectDivNumber); // select the div ID corresponding to the random number
+            currentDiv.innerHTML = currentMob.image; // selected Div receives the image of the Mob
+
+            currentDiv.onclick = function () { //onclick function, what happens when you smash
+                currentDiv.innerHTML = ''; // remove the mob's image
+                this.score = this.score + currentMob.scoreValue;
+                console.log(this.score);
+            }
+            this.mobDisappearTimer = setInterval(function () {
+                document.getElementById(selectDivNumber).innerHTML = '';
+            }, 1500);
         }.bind(this), this.speed);
     }
 
     resetGrid() {
         document.getElementsByClassName('grid-container')[0].innerHTML = '';
-
-        }
+    }
 
 }
