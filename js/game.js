@@ -1,9 +1,10 @@
 class Game {
-    constructor(level, speed) {
+    constructor(level, speed, time) {
         this.timeLeft = 3;
         this.randomDivs = 9;
         this.gridSize = level;
         this.speed = speed;
+        this.countdown;
     }
 
     start() {
@@ -17,7 +18,7 @@ class Game {
     }
 
     startTimer() {
-        let countdown = setInterval(function () {
+        this.countdown = setInterval(function () {
             this.timeLeft--;
             document.getElementById('timer').textContent = this.timeLeft; //show number of seconds left in the HTML score board
 
@@ -33,7 +34,10 @@ class Game {
             let newDiv = document.createElement('div');
             newDiv.className = 'grid-item';
             newDiv.id = i;
-            newDiv.onclick 
+            newDiv.onclick = function () {
+                newDiv.innerHTML = '';
+
+            }
             document.getElementsByClassName('grid-container')[0].append(newDiv);
         };
     }
@@ -59,13 +63,13 @@ class Game {
     }
 
     smash() {
-      var childs = document.getElementsByClassName('grid-item'); //returns a HTMLCollection
+        var childs = document.getElementsByClassName('grid-item'); //returns a HTMLCollection
         for (var i = 0; i < childs.length; i++) { //iterate over it to add the onclick method
 
             childs[i].addEventListener('click', function (e) { //execute a function onclick
                 console.log('clicked', e);
-            
-                
+
+
             })
         }
     }
