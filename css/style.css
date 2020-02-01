@@ -61,6 +61,7 @@ button {
   width: 31%;
   height: 31%;
   margin: 5px;
+  justify-content: center;
 }
 
 .menu-container {

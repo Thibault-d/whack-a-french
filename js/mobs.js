@@ -21,25 +21,46 @@ class Mob {
 }
 
 let mobArray = [{
-        scoreValue: 1000,
-        image: '<img width="100" height="100" src="/img/baguette.png">',
-        frequency: 1,
-    },
+            name: 'sangria',
+            scoreValue: -100,
+            image: '<img width="150" height="100" src="/img/sangria.png">',
+            frequency: 1,
+        },
+        {
+            name: 'fromage',
+            scoreValue: 100,
+            image: '<img width="150" height="100" src="/img/fromage.png">',
+            frequency: 1,
+        },
+        {
+            name: 'lepen',
+            scoreValue: -200,
+            image: '<img width="150" height="100" src="/img/lepen.jpg">',
+            frequency: 1,
+        },
+        {
+            name: 'tortillas',
+            scoreValue: -100,
+            image: '<img width="150" height="100" src="/img/tortilla.png">',
+            frequency: 1,
+        },
+        {
+            name: 'seat',
+            scoreValue: -100,
+            image: '<img width="150" height="100" src="/img/seat.png">',
+            frequency: 1,
+        },
+        {
+            name: '2cv',
+            scoreValue: -100,
+            image: '<img width="150" height="100" src="/img/2cv.png">',
+            frequency: 1,
+        },
     {
-        scoreValue: 999,
-        image: '<img width="100" height="100" src="/img/fromage.png">',
-        frequency: 1,
-    },
-    {
-        scoreValue: 1,
-        image: '<img width="100" height="100" src="/img/lepen.jpg">',
-        frequency: 1,
-    },
-    {
-        scoreValue: 18,
-        image: '<img width="100" height="100" src="/img/baguette.png">',
+        name: 'trump',
+        scoreValue: -100,
+        image: '<img width="150" height="100" src="/img/trump.png">',
         frequency: 1,
     }
 
 ]
-

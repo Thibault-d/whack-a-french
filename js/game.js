@@ -1,6 +1,6 @@
 class Game {
     constructor(level, speed) {
-        this.timeLeft = 10;
+        this.timeLeft = 3;
         this.randomDivs = 9;
         this.gridSize = level;
         this.speed = speed;
@@ -9,9 +9,11 @@ class Game {
     start() {
         startButton.onclick = function () {
             console.log('started');
+            status = 'playing';
             this.startTimer();
             this.createGrid();
-            this.mobGenerator()
+            this.mobGenerator();
+
         }.bind(this)
     }
 
@@ -20,8 +22,7 @@ class Game {
             this.timeLeft--;
             document.getElementById('timer').textContent = this.timeLeft;
             if (this.timeLeft <= 0) {
-                clearInterval(countdown);
-                document.getElementById('timer').textContent = "TIME OUT";
+                this.stopMobGenerator()
             }
         }.bind(this), 1000);
     }
@@ -45,8 +46,19 @@ class Game {
 
     mobGenerator() {
         let frequency = setInterval(function () {
-                document.getElementById(mygame.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image;
-
-            },1000);
-        }
+            document.getElementById(mygame.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image;
+        }, 500);
     }
+
+    stopMobGenerator() {
+        clearInterval(this.countdown);
+        document.getElementById('timer').textContent = "TIME OUT";
+        console.log('game stopped');
+    }
+
+    smash() {
+
+        grid-container
+
+    }
+}
