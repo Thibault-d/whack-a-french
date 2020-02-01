@@ -23,7 +23,7 @@ class Game {
 
             if (this.timeLeft <= 0) {
                 this.stopMobGenerator(); //stop generating mobs
-                clearInterval(this.countdown); //stop this counter
+                this.countdown = clearInterval(this.countdown); //stop this counter
             }
         }.bind(this), 1000);
     }
@@ -33,6 +33,7 @@ class Game {
             let newDiv = document.createElement('div');
             newDiv.className = 'grid-item';
             newDiv.id = i;
+            newDiv.onclick 
             document.getElementsByClassName('grid-container')[0].append(newDiv);
         };
     }
@@ -46,27 +47,27 @@ class Game {
     }
 
     mobGenerator() {
-        let frequency = setInterval(function () {
+        this.frequency = setInterval(function () {
             document.getElementById(this.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image; // take random mob
         }.bind(this), this.speed);
     }
 
     stopMobGenerator() {
-        clearInterval(this.countdown);
         document.getElementById('timer').textContent = "TIME OUT";
         console.log('game stopped');
+        this.frequency = clearInterval(this.countdown)
     }
 
     smash() {
-        var childs = document.getElementsByClassName('grid-item'); //returns a HTMLCollection
+      var childs = document.getElementsByClassName('grid-item'); //returns a HTMLCollection
         for (var i = 0; i < childs.length; i++) { //iterate over it to add the onclick method
-            childs[i].onclick = function () { //execute a function onclick
-                console.log('clicked');
-                childs.innerHTML = ''; // ??
+
+            childs[i].addEventListener('click', function (e) { //execute a function onclick
+                console.log('clicked', e);
+            
                 
-            }
+            })
         }
     }
-
 
 }
