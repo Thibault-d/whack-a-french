@@ -9,20 +9,21 @@ class Game {
     start() {
         startButton.onclick = function () {
             console.log('started');
-            status = 'playing';
-            this.startTimer();
-            this.createGrid();
-            this.mobGenerator();
-
+            this.startTimer(); // game timer
+            this.createGrid(); // create the space for the mobs
+            this.mobGenerator(); // puts a random mob on the grid every depending on the "speed" selected
+            this.smash(); // when click on a mob, make it disappear
         }.bind(this)
     }
 
     startTimer() {
         let countdown = setInterval(function () {
             this.timeLeft--;
-            document.getElementById('timer').textContent = this.timeLeft;
+            document.getElementById('timer').textContent = this.timeLeft; //show number of seconds left in the HTML score board
+
             if (this.timeLeft <= 0) {
-                this.stopMobGenerator()
+                this.stopMobGenerator(); //stop generating mobs
+                clearInterval(this.countdown); //stop this counter
             }
         }.bind(this), 1000);
     }
@@ -46,8 +47,8 @@ class Game {
 
     mobGenerator() {
         let frequency = setInterval(function () {
-            document.getElementById(mygame.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image;
-        }, 500);
+            document.getElementById(this.randomIntegerDiv().toString()).innerHTML = mymobs.newMob().image; // take random mob
+        }.bind(this), this.speed);
     }
 
     stopMobGenerator() {
@@ -57,8 +58,15 @@ class Game {
     }
 
     smash() {
-
-        grid-container
-
+        var childs = document.getElementsByClassName('grid-item'); //returns a HTMLCollection
+        for (var i = 0; i < childs.length; i++) { //iterate over it to add the onclick method
+            childs[i].onclick = function () { //execute a function onclick
+                console.log('clicked');
+                childs.innerHTML = ''; // ??
+                
+            }
+        }
     }
+
+
 }
