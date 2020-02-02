@@ -53,16 +53,22 @@ class Game {
     mobGenerator() {
         this.mobTimer = setInterval(function () {
             let points =0;
+            let previousDivNumber;
             let currentMob = mymobs.newMob(); // create a new mob randomly
             let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number
             let currentDiv = document.getElementById(selectDivNumber); // select the div ID corresponding to the random number
             currentDiv.innerHTML = currentMob.image; // selected Div receives the image of the Mob
-
-            currentDiv.onclick = function () { //onclick function, what happens when you smash
+                        currentDiv.onclick = function () { //when click on a Div
                 currentDiv.innerHTML = ''; // remove the mob's image
                 points = points + currentMob.scoreValue;
                 console.log(points);
             }
+            if(selectDivNumber === previousDivNumber){
+                return selectDivNumber = this.randomIntegerDiv().toString(); //prevents from having the same div 2 times in a row
+            }
+
+            previousDivNumber = selectDivNumber;
+
             this.mobDisappearTimer = setInterval(function () {
                 document.getElementById(selectDivNumber).innerHTML = '';
             }, 1500);
