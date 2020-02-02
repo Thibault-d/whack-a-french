@@ -4,10 +4,9 @@ class Game {
         this.gridSize = level;
         this.speed = speed;
         this.countdown;
-        this.remaining = gameTime;
         this.score = 0;
         this.mobTimer;
-        this.mobDisappearTimer;
+        this.mobDisappearTimer;    
     }
 
     start() {
@@ -23,11 +22,11 @@ class Game {
         this.countdown = setInterval(function () {
             this.gameTime--;
             document.getElementById('timer').textContent = this.gameTime;
-            if (this.gameTime <= 0) {
+            if (this.gameTime === 0) {
                 document.getElementById('timer').textContent = "TIME OUT";
-                clearInterval(this.mobTimer);
-                clearInterval(this.countdown);
+                clearInterval(this.mobTimer);      
                 clearInterval(this.mobDisappearTimer);
+                clearInterval(this.countdown);
                 this.resetGrid();
             }
         }.bind(this), 1000);
@@ -45,30 +44,21 @@ class Game {
     randomIntegerDiv() {
         var min = 0;
         var max = this.gridSize;
-        var random =
-            Math.floor(Math.random() * (+max - +min)) + +min;
+        var random = Math.floor(Math.random() * (+max - +min)) + +min;
         return random;
     }
 
     mobGenerator() {
+        var previous;
         this.mobTimer = setInterval(function () {
-            let points =0;
-            let previousDivNumber;
-            let currentMob = mymobs.newMob(); // create a new mob randomly
-            let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number
+            let currentMob = mymobs.newMob(); // calls the creation of a random mob object in the array and stores it
+            let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number and stores it
             let currentDiv = document.getElementById(selectDivNumber); // select the div ID corresponding to the random number
-            currentDiv.innerHTML = currentMob.image; // selected Div receives the image of the Mob
-                        currentDiv.onclick = function () { //when click on a Div
+            currentDiv.innerHTML = currentMob.image; // selected Div receives the image property of the mob object
+            currentDiv.onclick = function () { //when click on a Div
                 currentDiv.innerHTML = ''; // remove the mob's image
-                points = points + currentMob.scoreValue;
-                console.log(points);
+                this.score += currentMob.scoreValue; //update score
             }
-            if(selectDivNumber === previousDivNumber){
-                return selectDivNumber = this.randomIntegerDiv().toString(); //prevents from having the same div 2 times in a row
-            }
-
-            previousDivNumber = selectDivNumber;
-
             this.mobDisappearTimer = setInterval(function () {
                 document.getElementById(selectDivNumber).innerHTML = '';
             }, 1500);

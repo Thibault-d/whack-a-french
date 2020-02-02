@@ -1,8 +1,5 @@
 class Mob {
     constructor() {
-        this.scoreValue = 0;
-        this.visual = undefined;
-        this.frequency = 1;
     }
 
     newMob() {
