@@ -21,6 +21,7 @@ let mobArray = [{
         scoreValue: -100,
         image: '<img width="150" height="100" src="./img/sangria.png">',
         frequency: 1,
+        
     },
     {
         name: 'fromage',
@@ -33,6 +34,7 @@ let mobArray = [{
         scoreValue: -200,
         image: '<img width="150" height="100" src="./img/lepen.png">',
         frequency: 1,
+        audio: "./audio/sieg-heil.mp3"
     },
     {
         name: 'tortillas',

@@ -51,6 +51,7 @@ class Game {
     mobGenerator() {
         var previous;
         var score =0;
+        var audio;
         this.mobTimer = setInterval(function () {
             let currentMob = mymobs.newMob(); // calls the creation of a random mob object in the array and stores it
             let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number and stores it
@@ -61,6 +62,9 @@ class Game {
                 currentDiv.innerHTML = ''; // remove the mob's image
                 score += currentMob.scoreValue; //update score
                 document.getElementById('score').innerText = score;
+                let audio = new Audio(currentMob.audio);
+                audio.play();
+
             }}
             this.mobDisappearTimer = setInterval(function () {
                 document.getElementById(selectDivNumber).innerHTML = '';
