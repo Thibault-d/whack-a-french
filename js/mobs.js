@@ -48,7 +48,7 @@ let mobArray = [{
     },
     {
         name: '2cv',
-        scoreValue: -100,
+        scoreValue: 200,
         image: '<img width="150" height="100" src="./img/2cv.png">',
         frequency: 1,
     },
@@ -60,13 +60,13 @@ let mobArray = [{
     },
     {
         name: 'calimocho',
-        scoreValue: -1000,
+        scoreValue: -100,
         image: '<img width="120" height="100" src="./img/calimocho.png">',
         frequency: 1,
     },
     {
         name: 'vest',
-        scoreValue: -1000,
+        scoreValue: 100,
         image: '<img width="120" height="100" src="./img/vest.png">',
         frequency: 1,
     }
