@@ -58,7 +58,7 @@ button {
 }
 
 .grid-container {
-  cursor: url('../img/bread-removebg-preview80.png'), pointer;
+  cursor: url('../img/bread-removebg-preview80.png') 25 30, auto;
   display: flex;
   width: 100%;
   height: 100%;
@@ -76,6 +76,15 @@ button {
   height: 31%;
   margin: 5px;
   justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+  color:red;
+}
+
+.goodMob {
+  color: greenyellow;
+
 }
 
 .menu-container {
