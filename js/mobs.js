@@ -67,7 +67,7 @@ let mobArray = [{
         name: 'vest',
         scoreValue: 100,
         image: '<img width="120" height="100" src="./img/vest.png">',
-        audio: "./audio/honhon.wav"
+        audio: "./audio/honhon.mp3"
 
     },
     {
