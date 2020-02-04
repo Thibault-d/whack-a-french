@@ -42,16 +42,15 @@ class Game {
     }
 
     randomIntegerDiv() {
-        var min = 0;
-        var max = this.gridSize;
-        var random = Math.floor(Math.random() * (+max - +min)) + +min;
+        let min = 0;
+        let max = this.gridSize;
+        let random = Math.floor(Math.random() * (+max - +min)) + +min;
         return random;
     }
 
     mobGenerator() {
-        var previous;
-        var score =0;
-        var audio;
+        let score =0;
+        let audio;
         this.mobTimer = setInterval(function () {
             let currentMob = mymobs.newMob(); // calls the creation of a random mob object in the array and stores it
             let selectDivNumber = this.randomIntegerDiv().toString(); // generate a random number and stores it

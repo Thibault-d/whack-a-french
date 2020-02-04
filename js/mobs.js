@@ -19,11 +19,13 @@ let mobArray = [{
         name: 'sangria',
         scoreValue: -100,
         image: '<img width="150" height="100" src="./img/sangria.png">',
+        audio: "./audio/ay-caramba.mp3"
     },
     {
         name: 'fromage',
         scoreValue: 100,
         image: '<img width="150" height="100" src="./img/fromage.png">',
+        audio: "./audio/oula.mp3"
     },
     {
         name: 'lepen',
@@ -35,6 +37,7 @@ let mobArray = [{
         name: 'tortillas',
         scoreValue: -100,
         image: '<img width="150" height="100" src="./img/tortilla.png">',
+        audio: "./audio/ole.mp3"
     },
     {
         name: 'seat',
@@ -64,6 +67,7 @@ let mobArray = [{
         name: 'vest',
         scoreValue: 100,
         image: '<img width="120" height="100" src="./img/vest.png">',
+        audio: "./audio/honhon.wav"
 
     },
     {
