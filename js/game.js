@@ -17,17 +17,21 @@ class Game {
         }.bind(this)
     }
 
+    reset() {
+        document.getElementById('timer').textContent = "TIME OUT";
+        this.mobDisappearTimer = clearInterval(this.mobDisappearTimer);
+        this.mobTimer = clearInterval(this.mobTimer);
+        this.countdown = clearInterval(this.countdown);
+        this.resetGrid();
+    }
+
     startTimer() {
         this.gameTime = this.timeLeft;
         this.countdown = setInterval(function () {
             this.gameTime--;
             document.getElementById('timer').textContent = this.gameTime;
             if (this.gameTime === 0) { // when Time is out, stop all functions
-                document.getElementById('timer').textContent = "TIME OUT";
-                this.mobDisappearTimer = clearInterval(this.mobDisappearTimer);
-                this.mobTimer = clearInterval(this.mobTimer);
-                this.countdown = clearInterval(this.countdown);
-                this.resetGrid();
+                this.reset();
             }
         }.bind(this), 1000);
     }
@@ -63,7 +67,7 @@ class Game {
                     } else {
                         currentDiv.classList.add('badMob');
                     }
-                    currentDiv.innerHTML = currentMob.scoreValue; // remove the mob's image
+                    currentDiv.innerHTML = currentMob.scoreValue; // show the point value of the clicked mob
                     score += currentMob.scoreValue; //update score variable
                     document.getElementById('score').innerText = score; //display score variable
                     let audio = new Audio(currentMob.audio); //play mob sound

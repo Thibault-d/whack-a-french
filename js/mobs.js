@@ -1,8 +1,16 @@
 class Mob {
-    constructor() {}
+    constructor(value, image, audio) {
+        this.image = image;
+        this.audio = audio;
+        this.value = value;
+    }
 
     newMob() {
         let mob = mobArray[this.randomIntegerMob()];
+        this.image =  mobArray[this.randomIntegerMob().image]
+        this.image =  mobArray[this.randomIntegerMob().audio]
+        this.image =  mobArray[this.randomIntegerMob().audio]
+
         return mob;
     }
 
@@ -13,7 +21,16 @@ class Mob {
             Math.floor(Math.random() * (+max - +min)) + +min;
         return random;
     }
+
+    mobClick() {
+
+
+    }
+
+
 }
+
+
 
 let mobArray = [{
         name: 'sangria',
